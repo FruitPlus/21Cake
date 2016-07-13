@@ -1,0 +1,17 @@
+<ion-view view-title="蛋糕" >
+
+  <ion-content>
+    <ion-list>
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="cake in cakes" type="item-text-wrap" href="#/tab/cakes/{{cake.id}}">
+        <img ng-src="{{cake.face}}">
+        <h2>{{cake.name}}</h2>
+        <p>{{cake.lastText}}</p>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+
+        <ion-option-button class="button-assertive" ng-click="remove(cake)">
+          Delete
+        </ion-option-button>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

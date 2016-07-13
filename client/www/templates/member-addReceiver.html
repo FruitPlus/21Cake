@@ -1,0 +1,26 @@
+<ion-view view-title="添加地址" class = "member" >
+  <ion-content>
+	<ionic-city-picker options='CityPickData2'></ionic-city-picker>
+	<form class="list" ng-submit="processForm(Receiver)">
+		<label class="item item-input">
+			<input type="text"ng-required = "true" placeholder="收货人姓名" ng-model= "Receiver.name">
+		</label>
+		<label class="item item-input">
+			<input type="tel"ng-required = "true" placeholder="手机号码" ng-model = "Receiver.tel">
+		</label>
+		<label class="item item-input">
+			<input type="text"  ng-required = "true"placeholder="详细地址" ng-model = "Receiver.address">
+		</label>
+		<label class="item item-checkbox">
+			<label class="checkbox">
+				<input type="checkbox"  ng-model="Receiver.select">
+			</label>
+			设置为默认
+		</label>
+		<button class="button toCart toCart_button" style ="margin:30px;"  type="submit">
+		  保存地址
+		</button>
+	</form>
+
+  </ion-content>
+</ion-view>

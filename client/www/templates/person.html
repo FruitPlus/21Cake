@@ -1,0 +1,74 @@
+<!--
+  This template loads for the 'tab.friend-detail' state (app.js)
+  'friend' is a $scope variable created in the FriendsCtrl controller (controllers.js)
+  The FriendsCtrl pulls data from the Friends service (service.js)
+  The Friends service returns an array of friend data
+-->
+<ion-view view-title="个人中心" class = "person">
+<div class="bar bar-subheader">
+    <ion-scroll direction="x" scrollbar-x="false" style="width:100%;" >
+        <div class="button-bar sub_header_list" id="sub_header_list">
+            <a class="button button-clear " ng-click="changeTab(true)" ng-class = "{true:'sub_button_select',false:''}[select==true]">登录</a>
+            <a class="button button-clear" ng-click="changeTab(false)" ng-class = "{true:'sub_button_select',false:''}[select==false]">注册</a>
+        </div>
+    </ion-scroll>
+</div>
+
+  <ion-content class="padding has-subheader">
+  <div class="login" ng-if="select">
+	<img src="img/img_login_21cake.jpg" alt="" class="person_logo">  	
+	<div class="list" style="margin-bottom:10px;">
+	    <label class="item item-input" >
+	        <span class="input-label">账号</span>
+	        <input type="text" ng-model="userLogin.name" placeholder="用户名/邮箱地址">
+	    </label>
+	    <label class="item item-input">
+	        <span class="input-label">密码</span>
+	        <input type="password" ng-model="userLogin.psw" placeholder="填写密码">
+	    </label>
+	</div>
+	<div >
+		<label class="checkbox" >
+			<input type="checkbox">
+			
+		</label>
+		记住密码
+	</div>
+	<div class="padding" >
+	    <button class="button button-block toCart" ng-click="signIn(userLogin)">
+	      登陆
+	    </button>
+	</div>
+  </div>
+
+
+  <div class="register" ng-if="!select">
+  	<form name = "myForm"  ng-submit="processForm(user)">
+  		<div class="list" style="margin-bottom:10px;">
+  		    <label class="item item-input" >
+  		        <input type="text" ng-model="userReg.name" placeholder="用户名/邮箱地址" required="required" ng-required = "true">
+  		    </label>
+  		    <label class="item item-input">
+  		        <input type="password" ng-model="userReg.psw" required="required" placeholder="填写密码"  >
+  		    </label>
+  		    <label class="item item-input">
+  		        <input type="password" ng-model="userReg.psw2" required="required" placeholder="确认密码">
+  		    </label>
+  		    <label class="item item-input">
+  		        <input type="password" ng-model="userReg.code"required="required" placeholder="短信验证码" >
+  		    </label>
+  		</div>
+  		<div >
+  			<label class="checkbox" >
+  				<input type="checkbox" ng-model = "userReg.agree">	
+  			</label>
+  			同意
+  			<a href = "#"><<用户协议>></a>
+  		</div>
+  		<button class="button button-block toCart_button toCart_buttonT"  type="submit">
+  		  注册
+  		</button>
+  	</form>
+  </div>
+  </ion-content>
+</ion-view>

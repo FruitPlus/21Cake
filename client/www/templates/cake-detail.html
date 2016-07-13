@@ -1,0 +1,60 @@
+<!--
+  This template loads for the 'tab.friend-detail' state (app.js)
+  'friend' is a $scope variable created in the FriendsCtrl controller (controllers.js)
+  The FriendsCtrl pulls data from the Friends service (service.js)
+  The Friends service returns an array of friend data
+-->
+<ion-view view-title="{{cakes.name}}">
+  <ion-content class="padding">
+    <img ng-src="{{cakes.face}}" class = "cakeFace">
+    <p>
+      {{cakes.lastText}}
+    </p>
+    <p class ="base_info">
+    /自然成熟的泰国金枕头/<br>
+    /在曼谷，官兵后代庭院中，生长着一百年至一百五十年的榴莲树/<br>
+    Imagine if an object could bear the weight of all your sins, while you swan about ever beautiful. The durian fruit bears the weight of its sins on the outside, in the form of its malodorous stench.
+    </p>
+    <div class ="product-attributes">
+      <ul>
+        <li class = "clearfix">
+          <label class ="" for="">口味：</label>
+          <p>水果类</p>
+        </li>
+        <li class = "clearfix">
+          <label class ="" for="">甜度：</label>
+          <p>★★★☆☆☆</p>
+        </li>
+        <li class = "clearfix">
+          <label class ="" for="">适合人群：</label>
+          <p>各类人群，尤其喜欢榴莲的人</p>
+        </li>
+        <li class = "clearfix">
+          <label class ="" for="">保鲜条件：</label>
+          <p>0－4℃保藏4小时，5℃最佳食用</p>
+        </li>
+        <li class = "clearfix">
+          <label class ="" for="">原材料：</label>
+          <p>白巧克力（比利时）、榴莲（泰国金枕头）、乳脂奶油（新西兰）</p>
+        </li>
+
+      </ul>
+    </div>
+    <div class="product-time-explain">
+        <p class="early-time">现在订购最早&nbsp;<em>今天&nbsp;17:00</em>&nbsp;配送</p>
+        <p class="last-time">每日最晚配送时间20:00</p>
+    </div>
+    <ul class="padding product-explain-list clearfix">
+      <li><i class="ico icoOne"></i>13x13cm</li>
+      <li><i class="ico icoTwo"></i>适合3-4人分享</li>
+      <li><i class="ico icoThr"></i>含5套餐具</li>
+      <li><i class="ico icoFour"></i>需提前5小时预订</li>
+    </ul> 
+    <p class="padding" style="margin:0px;"><span class="product-price">{{total|currency:"¥"}}</span><span class="product-priceLitle">¥198.00/磅</span></p>
+    <ul class="product-select padding clearfix">
+      <li ng-class="{true:'ico_select',false:''}[Index==$index]" ng-repeat="pound in pounds" ng-click ="change($index)">{{pound}}.0磅</li>
+
+    </ul>
+    <button class="toCart mb80" ng-click="showPopup(total,id)">加入购物车</button>
+  </ion-content>
+</ion-view>

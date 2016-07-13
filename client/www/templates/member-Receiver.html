@@ -1,0 +1,23 @@
+<ion-view view-title="收货地址" class = "receiver" >
+ <ion-nav-buttons side="right" >
+  <button class="button button-clear icon ion-plus-round" ng-click = "addReveiver()"></button>
+</ion-nav-buttons>
+  <ion-content>
+	 <p ng-if = "data.length==0" style="text-align:center;margin-top:50px;">暂无收货地址</p>
+	 <ion-list>
+	   <ion-item  ng-repeat="item in data track by $index"  >
+		<h2>{{item.areaData.join('-')}}</h2>
+		<h2>{{item.address}}</h2>
+		<h2>{{item.name}}</h2>
+		<h2>{{item.tel}}</h2>
+		<ul class = "receiver_list clearfix">
+			<li><a href="#/tab/memberAddReceiver/{{$index}}">编辑收货地址</a></li>
+			<li ng-click = "setDefault($index)"ng-if="item.select">取消默认</li>
+			<li ng-click = "setDefault($index)"ng-if="!item.select">设置默认</li>
+			<li ng-click = "delConfirm($index)">删除</li>
+		</ul>
+		<span class = "defaultLabel"ng-if="item.select">默认</span>
+	   </ion-item>
+	 </ion-list>
+  </ion-content>
+</ion-view>

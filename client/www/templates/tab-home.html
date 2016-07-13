@@ -1,0 +1,21 @@
+<ion-view view-title="首页" >
+  <ion-content class="">
+	<ion-slide-box class = "banner">
+	  <ion-slide ng-repeat = "banner in banners">
+			<img ng-src="{{banner.img}}" alt="">
+	  </ion-slide>
+	</ion-slide-box>
+	
+      <ul class = "home_list clearfix">
+        <li ng-repeat = "cake in cakes">
+          <a href="#/productMain/{{cake.id}}">
+          	<img ng-src="{{cake.face}}" alt="">
+          	<h2>{{cake.name}}</h2>
+          	<h3>朗姆芝士</h3>
+          </a>
+        </li>
+
+
+      </ul>
+  </ion-content>
+</ion-view>

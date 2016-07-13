@@ -1,0 +1,114 @@
+<ion-view view-title="订单提交" class = "shopcartSubmit" >
+  <ion-content>
+
+	<ion-list class = ' '>
+	  <ion-item class="item-remove-animate  item-icon-right address smallTitle"  type="item-text-wrap">
+	  	收货地址
+	  </ion-item>
+	  <ion-item class="item-remove-animate  item-icon-right address"  type="item-text-wrap" href="#/tab/shopcartReceipt">
+		<h2>{{shopcartReceipt.name}} {{shopcartReceipt.tel}}</h2>
+		<p>{{shopcartReceipt.areaData.join('-')}}</p>
+		<p>{{shopcartReceipt.address}}</p>
+	    <i class="icon ion-chevron-right icon-accessory"></i>
+	  </ion-item>
+	  <div class = "item item-divider"></div>
+	  <ion-item class="item-remove-animate  item-icon-right address smallTitle"  type="item-text-wrap">
+	  	配送方式 <span class = "smallRight">21客配送</span>
+	  </ion-item>
+	  <ion-item class="item-remove-animate   address"  type="item-text-wrap" >
+		<h2>配送时间</h2>
+		<div class = "deliveryTime clearfix">
+			<div class = "deliveryTime_boxOne" ng-click = "openDatePicker(currentDate)">
+				<span ng-model = "currentDate">{{currentDate|date:'yyyy-MM-dd'}}</span>
+				<i class="icon ion-calendar" style="font-size:1.5rem;line-height:2rem;float:right;margin-right:.3rem;"></i>
+			</div>
+			<div class = "deliveryTime_boxTwo">
+				<label class="item item-input ship_time">
+					<select id="time" name="ship_time_scope" class="select01">
+						<option value="0">请选择时间段</option>
+						<option value="09:30-10:00">上午09:30</option><option value="10:00-10:30">上午10:00</option>
+						<option value="10:30-11:00">上午10:30</option><option value="11:00-11:30">中午11:00</option>
+						<option value="11:30-12:00">中午11:30</option><option value="12:00-12:30">中午12:00</option>
+						<option value="12:30-13:00">中午12:30</option><option value="13:00-13:30">下午13:00</option>
+						<option value="13:30-14:00">下午13:30</option><option value="14:00-14:30">下午14:00</option>
+						<option value="14:30-15:00">下午14:30</option><option value="15:00-15:30">下午15:00</option>
+						<option value="15:30-16:00">下午15:30</option><option value="16:00-16:30">下午16:00</option>
+						<option value="16:30-17:00">下午16:30</option><option value="17:00-17:30">晚上17:00</option>
+						<option value="17:30-18:00">晚上17:30</option><option value="18:00-18:30">晚上18:00</option>
+						<option value="18:30-19:00">晚上18:30</option><option value="19:00-19:30">晚上19:00</option>
+						<option value="19:30-20:00" >晚上19:30</option>
+					</select>
+				</label>
+				<i class="icon ion-clock" style="font-size:1.5rem;line-height:2rem;float:right;margin-right:.3rem;"></i>
+			</div>
+		</div>
+		<p class = "deliveryTime_content">配送时间受实时路况影响，会有前后15分钟的误差，请各位谅解。</p>
+	  </ion-item>
+
+	  <div class = "item item-divider"></div>
+
+	  <ion-item class="item-remove-animate  item-icon-right address"  type="item-text-wrap" href="#/tab/shopcartPayWay">
+		<h1>支付方式 <span class = "small smallRight">{{payWayChoice}}</span></h1>
+	    <i class="icon ion-chevron-right icon-accessory"></i>
+	  </ion-item>
+	  <ion-item class="item-remove-animate  item-icon-right address"  type="item-text-wrap" href="#">
+		<h1>优惠卷 <span class = "small smallRight">未使用</span></h1>
+	    <i class="icon ion-chevron-right icon-accessory"></i>
+	  </ion-item>
+	  <ion-item class="item-remove-animate  item-icon-right address"  type="item-text-wrap" href="#">
+	  	<h1>尊享卡 <span class = "small smallRight">未使用</span></h1>
+	      <i class="icon ion-chevron-right icon-accessory"></i>
+	  </ion-item>
+	  <ion-item class="item-remove-animate  item-icon-right address"  type="item-text-wrap" href="#">
+	  	<h1>代金卡<span class = 'small'>（不能与优惠券同时使用）</span><span class = "small smallRight">使用0张</span></h1>
+	      <i class="icon ion-chevron-right icon-accessory"></i>
+	  </ion-item>
+	  <ion-item class="item-remove-animate  item-icon-right address"  type="item-text-wrap" href="#/tab/shopcartBalance">
+	  	<h1>现金账户余额<span class = "small smallRight">未使用</span></h1>
+	      <i class="icon ion-chevron-right icon-accessory"></i>
+	  </ion-item>
+	  <ion-item class="item-remove-animate  item-icon-right address"  type="item-text-wrap" href="#">
+	  	<h1>发票信息</h1>
+	      <i class="icon ion-chevron-right icon-accessory"></i>
+	  </ion-item>
+	  <div class = "item item-divider"></div>
+
+	</ion-list>
+
+
+
+	<ion-list class = "productList">
+		<ion-item class="item-remove-animate  item-icon-right address smallTitle" style="border:0px;" type="item-text-wrap">
+			商品清单
+		</ion-item>
+		<ion-item class="item-thumbnail-left productList">
+			 <img ng-src="img/home_list01.jpg">
+			 <p>Bailey's Love Triangle </p>
+			 <p>百利甜情人</p>
+			 <p>磅数：1.0磅</p>
+			 <p>¥198.0 ×1</p>
+		</ion-item>
+		<div class = "item item-divider"></div>
+	</ion-list>
+
+
+	<ion-list class = "shopcartSubmit_notice">
+		<div class = "row">
+			<ul class = "col-50">
+				<li>商品运费:<span class="shopcartSubmit_noticeMoney">¥0.0</span></li>
+				<li>优惠卷抵扣:<span class="shopcartSubmit_noticeMoney">¥0.0</span></li>
+				<li>代金券抵扣:<span class="shopcartSubmit_noticeMoney">¥0.0</span></li>
+				<li>余额抵扣:<span class="shopcartSubmit_noticeMoney">¥0.0</span></li>
+			</ul>
+			<ul class = "col-50">
+				<li>需付总金额</li>
+				<li class = 'clearfix'><span class="shopcartSubmit_noticeMoney" style="float:left">¥198.0</span></li>
+				<li class = "smallRight"> 订单已满￥100元,享免费配送服务 </li>
+			</ul>
+		</div>
+	</ion-list>
+
+	<button class="toCart mt20" ng-click="showPopup(total,id)">提交订单</button>
+	<button class="toCart_button toCart mt20 toCart_buttonT" style="width:60%"ng-click="closePopup()">返回购物车</button>
+  </ion-content>
+</ion-view>

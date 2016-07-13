@@ -1,0 +1,28 @@
+<!--
+  This template loads for the 'tab.friend-detail' state (app.js)
+  'friend' is a $scope variable created in the FriendsCtrl controller (controllers.js)
+  The FriendsCtrl pulls data from the Friends service (service.js)
+  The Friends service returns an array of friend data
+-->
+<ion-view view-title="选择地址" class = "shopcartSubmit_Receipt">
+  <ion-content>
+
+    <ion-list>
+       <ion-item  ng-repeat = "item in address"class = "Receipt_item">
+        <div class = 'row'>
+          <div class = "col-20" style="vertical-align:middle;">
+            <label class="checkbox" style="vertical-align:middle;">
+              <input type="checkbox" ng-click = "selectAddress($index,{{item.select}})" ng-model = "item.select">
+            </label>
+          </div>
+          <div class = "col-67" style="vertical-align:middle;">
+            <h5>{{item.name}}</h5>
+            <h5>{{item.tel}}</h5>
+             <h5>{{item.areaData.join('-')}}</h5>
+            <h5>{{item.address}}</h5>
+          </div>
+        </div>
+       </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

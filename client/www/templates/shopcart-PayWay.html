@@ -1,0 +1,16 @@
+<!--
+  This template loads for the 'tab.friend-detail' state (app.js)
+  'friend' is a $scope variable created in the FriendsCtrl controller (controllers.js)
+  The FriendsCtrl pulls data from the Friends service (service.js)
+  The Friends service returns an array of friend data
+-->
+<ion-view view-title="支付方式" class = "shopcartSubmit_Receipt">
+  <ion-content>
+    <div class="list">
+      <ion-radio ng-repeat="item in payWay" 
+             ng-model="payWayChoice" ng-value="item" ng-click ="selectPayWay($index)">
+        {{item}}
+      </ion-radio>
+    </div>
+  </ion-content>
+</ion-view>
